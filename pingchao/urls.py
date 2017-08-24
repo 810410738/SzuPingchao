@@ -4,5 +4,6 @@ from . import views
 
 app_name = 'pingchao'
 urlpatterns = [
-    url(r'^&', views.index),
+    url(r'^$', views.index),
+    url(r'^(.+)/$', views.other),
 ]
