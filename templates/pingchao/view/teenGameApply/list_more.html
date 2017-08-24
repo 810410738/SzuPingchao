@@ -1,52 +1,23 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+{% extends 'base.html' %}
+{% load staticfiles %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>乒超智能赛事</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1， user-scalable=0, maximum-scale=1.0">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-    <!--微信UI-->
-    <link href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css" rel="stylesheet">
-
-    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
-    <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <style type="text/css">
-        
-      
-    </style>
-</head>
-
-<body>
-
-    <!--[if lt IE 8]>
-                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-      <header class='demos-header'>
+{% block main %}
+ <header class='demos-header'>
       <h1 >南山区第七届中小学生乒乓球比赛</h1>
     </header>
     <article class="weui-article">
       <!-- <h1>南山区第七届中小学生乒乓球比赛</h1> -->
-      
+
         <section>
           <h3>-、比赛时间和地点</h3>
           <p>
             比赛时间：7月26-31日</br>
             比赛地点：南山区体育馆
           </p>
-         
-            <img src="../../img/2015_01_01.jpg" alt="">
+
+            <img src="{% static 'pingchao/img/2015_01_01.jpg' %}" alt="">
             <!-- <img src="./images/pic_article.png" alt=""> -->
-          
+
         </section>
         <section>
           <h3>二、参赛单位</h3>
@@ -101,26 +72,13 @@
 （九）本次比赛食宿由大会统一安排。
           </pre>
 
-          
+
         </section>
     </article>
 
-
-    <a href="form.html">
+    <a href="/view/teenGameApply/form.html">
         <button class = "weui-btn weui-btn_primary" >
         点我报名
         </button>
     </a>
-    <footer class="weui-footer">
-        <p class="weui-footer_test">&copy; 深圳大学乒乓球俱乐部 2017</p>
-    </footer>
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')
-    </script>
-    <!--<script src="../js/vendor/bootstrap.min.js"></script>-->
-
-</body>
-
-</html>
+{% endblock main %}
