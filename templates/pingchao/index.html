@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -19,9 +20,9 @@
     <link href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css" rel="stylesheet">
 
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{% static 'pingchao/css/main.css' %}">
 
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="{% static 'pingchao/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
 </head>
 
 <body>
@@ -29,8 +30,8 @@
     <!--[if lt IE 8]>
                 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="logoBar"><img src="img/SIMSlogo.png" alt="SZU logo"></div>
-    <img src="img/cool1.jpg" class="logo" alt="picture">
+    <div class="logoBar"><img src="{% static 'pingchao/img/SIMSlogo.png' %}" alt="SZU logo"></div>
+    <img src="{% static 'pingchao/img/cool1.jpg' %}" class="logo" alt="picture">
     <div class="container">
         <a href="./view/teenGameApply/list.html">
             <div class="leftBig registDIV" style="background-color: #FF9999">
@@ -70,11 +71,11 @@
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+        window.jQuery || document.write('<script src="{% static 'pingchao/js/vendor/jquery-1.11.2.min.js' %}"><\/script>')
     </script>
     <!--<script src="js/vendor/bootstrap.min.js"></script>-->
 
-    <script src="js/main.js"></script>
+    <script src="{% static 'pingchao/js/main.js' %}"></script>
 </body>
 
 </html>
