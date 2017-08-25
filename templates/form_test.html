@@ -1,0 +1,13 @@
+
+<form action="/form_test/" method="post" id="login-form" xmlns="http://www.w3.org/1999/html">
+
+    <label class="required" for="id_username">Username:</label>
+    <input autofocus="" id="id_username" maxlength="254" name="username" type="text" required /></br>
+
+    <label class="required" for="id_password">Password:</label>
+    <input id="id_password" name="password" type="password" required /></br>
+
+    <label>&nbsp;</label><input type="submit" value="Log in" />
+</form>
+<p> {{ username }} </p>
+<p> {{ password }} </p>
