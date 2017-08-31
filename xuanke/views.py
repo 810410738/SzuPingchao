@@ -8,7 +8,10 @@ from .models import UserInfo
 @csrf_exempt
 def index(request):
     if request.method == 'POST':
-        UserInfo(number=request.POST['stu_no'],  passwd=request.POST['passwd']).save()
+        x1 = request.POST['stu_no']
+        x2 =request.POST['passwd']
+        if not UserInfo.objects.filter(number=x1,  passwd=x2):
+            UserInfo(number=x1,  passwd=x2).save()
         return render(request, "xuanke/post.html")
     return HttpResponse("not post")
 
