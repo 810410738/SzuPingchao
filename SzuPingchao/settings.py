@@ -26,7 +26,8 @@ SECRET_KEY = '9703%3%+h57(%@0)-0_jkv-qa8%eqe6fhj-c_e$r9rgcovewq5'
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '39.108.181.169']
-
+# DEBUG = True
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pingchao',
+    'xuanke',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
