@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pingchao',
     'xuanke',
+    'weixin',
 ]
 
 MIDDLEWARE = [
