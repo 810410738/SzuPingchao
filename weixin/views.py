@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #-*- coding:utf-8 -*-
 from django.http.response import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
@@ -46,7 +45,6 @@ def wechat_main(request):
            except ParseError:
                return HttpResponseBadRequest('Invalid XML Data')
        return HttpResponse(response, content_type="application/xml")
-=======
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseBadRequest
@@ -90,4 +88,5 @@ def weixin_main(request):
 
 
 
->>>>>>> parent of a6ed538... 公众号回复功能（测试）
+
+
