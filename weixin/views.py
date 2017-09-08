@@ -1,6 +1,4 @@
 #-*- coding:utf-8 -*-
-import sys
-sys.setdefaultencoding('utf8')
 from django.http.response import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 from wechat_sdk import WechatConf
