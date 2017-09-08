@@ -44,11 +44,9 @@ def weixin_main(request):
 
         if isinstance(message, TextMessage):
             content = message.content.strip()
-            if content == 'nihao':
-                reply_text = ("Hello World")
-                response = wechat_instance.response_text(content=reply_text)
-                return HttpResponse(response, content_type='application/xml')
+            if content == "你好":
+                reply_text = ("哈哈，你好")
             else:
-                reply_text = (".....")
-                response = wechat_instance.response_text(content=reply_text)
-                return HttpResponse(response, content_type='application/xml')
+                reply_text = ("请跟我说你好。。。")
+            response = wechat_instance.response_text(content=reply_text)
+            return HttpResponse(response, content_type='application/xml')
