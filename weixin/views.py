@@ -33,26 +33,27 @@ def weixin_main(request):
             return HttpResponseBadRequest('Verify Failed')
 
         return HttpResponse(echostr, content_type='text/plain')
-    else:
-        # 解析本次请求的 XML 数据
-        try:
-            wechat_instance.parse_data(data=request.body)
-        except ParseError:
-            return HttpResponseBadRequest('Invalid XML Data')
+    # 解析本次请求的 XML 数据
+    try:
+        wechat_instance.parse_data(data=request.body)
+    except ParseError:
+        return HttpResponseBadRequest('Invalid XML Data')
          # 获取解析好的微信请求信息
-        message = wechat_instance.get_message()
+    message = wechat_instance.get_message()
 
-        if isinstance(message, TextMessage):
-            content = message.content.strip()
-            if content == '你好':
-                reply_text = ("Hello World")
-                response = wechat_instance.response_text(content=reply_text)
-                return HttpResponse(response, content_type='application/xml')
-            else:
-                reply_text = (".....")
-                response = wechat_instance.response_text(content=reply_text)
-                return HttpResponse(response, content_type='application/xml')
-
+    response = wechat_instance.response_text(
+        content=(
+            '感谢你的关注'
+        )
+    )
+    if isinstance(message, TextMessage):
+        content = message.content.strip()
+        if content == '你好':
+            reply_text = "Hello World"
+        else:
+            reply_text = "....."
+        response = wechat_instance.response_text(content=reply_text)
+    return HttpResponse(response, content_type='application/xml')
 
 
 
