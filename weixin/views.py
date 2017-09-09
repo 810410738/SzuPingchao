@@ -46,7 +46,7 @@ def weixin_main(request):
             if message.type == 'subscribe':
                 reply_text = ('欢迎关注jerry的微信号!')
         if isinstance(message, TextMessage):
-            content = message.content.strip()
+            content = message.content.strip().encode('utf8')
             if content == "你好":
                 reply_text = ("哈哈，你好"+message.source)
             else:
