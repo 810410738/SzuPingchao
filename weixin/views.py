@@ -42,11 +42,23 @@ def weixin_main(request):
          # 获取解析好的微信请求信息
         message = wechat_instance.get_message()
 
+        if isinstance(message, EventMessage):
+            if message.type == 'subscribe':
+                reply_text = ('欢迎关注jerry的微信号!')
         if isinstance(message, TextMessage):
             content = message.content.strip()
             if content == "你好":
-                reply_text = ("哈哈，你好")
+                reply_text = ("哈哈，你好"+message.source)
             else:
-                reply_text = ("请跟我说你好。。。")
-            response = wechat_instance.response_text(content=reply_text)
-            return HttpResponse(response, content_type='application/xml')
+                reply_text = ("请跟我说你好。。。"+message.source)
+
+        elif isinstance(message, ImageMessage):
+            reply_text = ('这是一张图片，我看不懂~')
+
+        elif isinstance(message, VoiceMessage):
+            reply_text = ('这是一段语音，我听不懂~')
+
+        elif isinstance(message, VideoMessage):
+            reply_text = ('这是一段视频，我看不懂')
+        response = wechat_instance.response_text(content=reply_text)
+        return HttpResponse(response, content_type='application/xml')
