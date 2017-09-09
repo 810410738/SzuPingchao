@@ -57,7 +57,9 @@ def weixin_main(request):
 
         if isinstance(message, EventMessage):
             if message.type == 'subscribe':
-                reply_text = ('欢迎关注jerry的微信号!')
+                reply_text = ('欢迎关注jerry的微信号!\n'
+                              '这是我的网站，欢迎访问\n'
+                              'http://39.108.181.169')
         if isinstance(message, TextMessage):
             content = message.content.strip().encode('utf8')
             if content == "你好":
