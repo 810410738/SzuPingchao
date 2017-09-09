@@ -48,9 +48,9 @@ def weixin_main(request):
         if isinstance(message, TextMessage):
             content = message.content.strip().encode('utf8')
             if content == "你好":
-                reply_text = ("哈哈，你好"+message.source)
+                reply_text = ("哈哈，你好")
             else:
-                reply_text = ("请跟我说你好。。。"+message.source)
+                reply_text = ("请跟我说你好。。。")
 
         elif isinstance(message, ImageMessage):
             reply_text = ('这是一张图片，我看不懂~')
