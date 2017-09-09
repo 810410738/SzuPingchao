@@ -14,7 +14,20 @@ wechat_instance = WechatBasic(
     appid='wx68504760f1652652',
     appsecret='af867702558c8c7f62d71ab4e9294c4e',
 )
-
+wechat_instance.create_menu(menu_data={
+    'button': [
+        {
+            'type': 'click',
+            'name': '今日歌曲',
+            'key': 'MUSIC',
+        },
+        {
+            'type': 'click',
+            'name': '简介',
+            'key': 'INTRODUTION',
+        },
+    ]
+})
 
 @csrf_exempt
 def weixin_main(request):
