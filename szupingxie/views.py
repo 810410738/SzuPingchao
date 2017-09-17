@@ -22,6 +22,7 @@ def ZhanxinFormPost(request):
             temp = ZhaoXinBaoMing(name=_name,  sex=temp, college=_college, phone=_phone, stu_no=_stu_no)
             temp.save()
             context = {
+                'name':temp.name,
                 'id': temp.id
             }
             return render(request, "szupingxie/success.html", context=context)
