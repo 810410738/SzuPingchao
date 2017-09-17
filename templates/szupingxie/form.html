@@ -20,11 +20,50 @@
     <link href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css" rel="stylesheet">
 
     <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type="text/javascript">
+        function validate_required(field, alerttxt){
+            with(field)
+            {
+               if(value==null||value=="")
+                {
+                    alert(alerttxt);
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        }
+        function validate_form(thisForm){
+            with(thisForm){
+                if(validate_required(name, "名字不可以为空!") == false)
+                {
+                    name.focus();
+                    return false;
+                }
+                else if(validate_required(select2, "性别不可以为空!") == false){
+                    select2.focus();
+                    return false;
+                }
+                else if(validate_required(college, "学院不可以为空!") == false){
+                    college.focus();
+                    return false;
+                }
+                 else if(validate_required(phone, "手机号码不可以为空!") == false){
+                    phone.focus();
+                    return false;
+                }
+                 else if(validate_required(stu_no, "学号不可以为空!") == false){
+                    stu_no.focus();
+                    return false;
+                }
+            }
+        }
+</script>
+
     <style type="text/css">
-    body{
-        /*background-image: url(../img/乒超赛事图片.jpg);*/
-        width: 100%;
-        /*background-size: cover;*/
+    span{
+        color:red;
     }
    
 
@@ -45,11 +84,11 @@
 2、加入乒协很容易脱单。<br/>
     </p>
     </article>
-    <form action="/szupingxie/" method="post">
+    <form action="/szupingxie/" onsubmit="return validate_form(this)" method="post">
         <div class="weui-cells weui-cells_form">
         <!-- 姓名 -->
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">姓名<span>*</span> </label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" name="name" placeholder="请输入姓名"/>
                 </div>
@@ -58,7 +97,7 @@
            <!-- 性别 -->
         <div class="weui-cell weui-cell_select weui-cell_select-after">
                 <div class="weui-cell__hd">
-                    <label  class="weui-label">性别</label>
+                    <label  class="weui-label">性别<span>*</span></label>
                 </div>
                 <div class="weui-cell__bd">
                     <select class="weui-select" name="select2">
@@ -72,16 +111,45 @@
         <!-- 学院 -->
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <label class="weui-label">学院</label>
+                    <label class="weui-label">学院<span>*</span></label>
                 </div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" name="college" placeholder="请输入你的学院"/>
+                    <!--<input class="weui-input" type="text" name="college" placeholder="请输入你的学院"/>-->
+                    <select class="weui-select" name="college">
+                        <option value="">请选择你的学院</option>
+                        <option value="材料学院                      ">材料学院                      </option>
+	<option value="传播学院                      ">传播学院                      </option>
+	<option value="电子科学与技术学院            ">电子科学与技术学院            </option>
+	<option value="法学院                        ">法学院                        </option>
+	<option value="高等研究院                    ">高等研究院                    </option>
+	<option value="管理学院                      ">管理学院                      </option>
+	<option value="光电工程学院                  ">光电工程学院                  </option>
+	<option value="国际交流学院                  ">国际交流学院                  </option>
+	<option value="化学与环境工程学院            ">化学与环境工程学院            </option>
+	<option value="机电与控制工程学院            ">机电与控制工程学院            </option>
+	<option value="计算机与软件学院              ">计算机与软件学院              </option>
+	<option value="建筑与城市规划学院            ">建筑与城市规划学院            </option>
+	<option value="经济学院                      ">经济学院                      </option>
+	<option value="人文学院                      ">人文学院                      </option>
+	<option value="生命与海洋科学学院            ">生命与海洋科学学院            </option>
+	<option value="师范学院                      ">师范学院                      </option>
+	<option value="师范学院（高尔夫学院）        ">师范学院（高尔夫学院）        </option>
+	<option value="数学与统计学院                ">数学与统计学院                </option>
+	<option value="土木工程学院                  ">土木工程学院                  </option>
+	<option value="外国语学院                    ">外国语学院                    </option>
+	<option value="物理与能源学院                ">物理与能源学院                </option>
+	<option value="心理与社会学院                ">心理与社会学院                </option>
+	<option value="信息工程学院                  ">信息工程学院                  </option>
+	<option value="医学院                        ">医学院                        </option>
+	<option value="艺术设计学院                  ">艺术设计学院                  </option>
+	<option value="应用技术学院                  ">应用技术学院                  </option>
+</select>
                 </div>
             </div>
               <!-- 手机 -->
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <label class="weui-label">手机号</label>
+                    <label class="weui-label">手机号<span>*</span></label>
                 </div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="number"  pattern="[0-9]*" name="phone" placeholder="请输入11位手机号"/>
@@ -90,7 +158,7 @@
         <!-- 学号 -->
           <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <label class="weui-label">学号</label>
+                    <label class="weui-label">学号<span>*</span></label>
                 </div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="number" pattern="[0-9]*"  name="stu_no" placeholder="请输入你的学号"/>
