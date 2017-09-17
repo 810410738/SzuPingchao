@@ -9,3 +9,4 @@ class ZhaoXinBaoMing(models.Model):
     college = models.CharField(max_length=30)
     phone = models.CharField(max_length=11)
     stu_no = models.CharField(max_length=20)
+    time = models.DateTimeField(auto_now=True)

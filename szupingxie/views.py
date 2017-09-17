@@ -19,8 +19,14 @@ def ZhanxinFormPost(request):
         else:
             temp = '女'
         if not ZhaoXinBaoMing.objects.filter(name=_name,  sex=temp, college=_college, phone=_phone, stu_no=_stu_no):
-            ZhaoXinBaoMing(name=_name,  sex=temp, college=_college, phone=_phone, stu_no=_stu_no).save()
-        return render(request, "szupingxie/success.html")
+            temp = ZhaoXinBaoMing(name=_name,  sex=temp, college=_college, phone=_phone, stu_no=_stu_no)
+            temp.save()
+            context = {
+                'id': temp.id
+            }
+            return render(request, "szupingxie/success.html", context=context)
+        else:
+            return HttpResponse("你已经报名了，请不要重复报名，谢谢！")
     if request.method == 'GET':
         return render(request, "szupingxie/form.html")
 

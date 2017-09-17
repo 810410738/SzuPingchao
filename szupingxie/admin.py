@@ -4,6 +4,6 @@ from .models import ZhaoXinBaoMing
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['name', 'sex', 'college', 'phone', 'stu_no']
+    list_display = ['name', 'sex', 'college', 'phone', 'stu_no', 'time']
 
 admin.site.register(ZhaoXinBaoMing, PostAdmin)
