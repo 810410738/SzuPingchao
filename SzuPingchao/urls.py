@@ -19,5 +19,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^xuanke/', include('xuanke.urls')),
     url(r'^weixin/', include('weixin.urls')),
+    url(r'^szupingxie/', include('szupingxie.urls')),
     url(r'', include('pingchao.urls')),
 ]
