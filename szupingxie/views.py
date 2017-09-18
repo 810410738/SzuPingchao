@@ -27,8 +27,10 @@ def ZhanxinFormPost(request):
             }
             return render(request, "szupingxie/success.html", context=context)
         else:
+            temp = ZhaoXinBaoMing.objects.get(name=_name,  sex=temp, college=_college, phone=_phone, stu_no=_stu_no)
             context = {
                 'name': _name,
+                'id': temp.id,
             }
             return render(request, 'szupingxie/fail.html', context=context)
     if request.method == 'GET':
