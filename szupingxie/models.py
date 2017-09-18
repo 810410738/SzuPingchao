@@ -4,7 +4,7 @@ from django.db import models
 
 
 class ZhaoXinBaoMing(models.Model):
-    id = models.AutoField(default=601, primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=10)
     sex = models.CharField(max_length=2)
     college = models.CharField(max_length=30)
