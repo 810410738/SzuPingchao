@@ -6,8 +6,9 @@ from .models import ZhaoXinBaoMing
 # Create your views here.
 
 
+
 @csrf_exempt
-def ZhanxinFormPost(request):
+def ZhanxinFormPost(request, ):
     if request.method == 'POST':
         _name = request.POST['name']
         _phone = request.POST['phone']
