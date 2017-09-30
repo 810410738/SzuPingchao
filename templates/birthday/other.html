@@ -7,7 +7,7 @@
 	<style type="text/css">
 		@font-face {
 			font-family: digit;
-			src: url('digital-7_mono.ttf') format("truetype");
+			src: url("{% static 'birthday/other/js/digital-7_mono.ttf' %}") format("truetype");
 		}
 	</style>
 	<!--微信UI-->
@@ -43,7 +43,7 @@
 				<span class="space"/><span class="comments">暂时霖到系甘多了</span><br /><br />
 				<span class="space"/><span class="comments">额~~翻屋企要好食好住啦</span><br /><br />
 				<span class="space"/><span class="comments">The last thing I want to say, boring and ordinary, is :</span><br /><br />
-				<span class="space"/><span class="comments">"Happy Birthday!</span><br /><br />
+				<span class="space"/><span class="comments">"Happy Birthday!"</span><br /><br />
 				<span class="space"/><span class="comments">语法没错吧，哈哈。。。</span><br /><br />
 				<!-- Date currentTime = <span class="keyword">new</span> Date(); <br />
 				SimpleDateFormat formatter = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);<br />
@@ -85,19 +85,17 @@
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						<!--"What's in a name? that which we call a rose<br>-->
-                         <!--By any other name would smell as sweet.”<br/>-->
 						<div class="signature">送个超大的蛋糕比你，食肥你！</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	 <!--<div class="weui-footer weui-footer_fixed-bottom">-->
-            <!--<p class="weui-footer__links">-->
-                <!--<a class="weui-footer__link" href="javascript:home();">Copyright © 2017  Jerry</a>-->
-            <!--</p>-->
-        <!--</div>-->
+	 <div class="weui-footer weui-footer_fixed-bottom">
+            <p class="weui-footer__links">
+                <a class="weui-footer__link" href="javascript:home();">Copyright © 2017  Jerry</a>
+            </p>
+        </div>
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
