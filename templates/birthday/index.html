@@ -7,6 +7,8 @@
   <meta charset="UTF-8">
 
   <title>HappyBirthday to 萧慧丹</title>
+    <!--微信UI-->
+    <link href="https://cdn.bootcss.com/weui/1.1.1/style/weui.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'birthday/css/reset.css' %}">
 
     <link rel="stylesheet" href="{% static 'birthday/css/style.css' %}" media="screen" type="text/css" />
@@ -171,12 +173,19 @@
     </path>
     <rect x="10" y="475.571" fill="#fefae9" width="180" height="4" />
 </svg>
+ </a>
 <div class="text" id="code">
   <h1>Happy Birthday!</h1>
   <h2>丹</h2>
 		2017.10.01<br />
 </div>
- </a>
+
+ <div class="weui-footer weui-footer_fixed-bottom">
+            <p class="weui-footer__links">
+                <a class="weui-footer__link" href="javascript:home();">Intelligent Card System</a>
+            </p>
+            <p class="weui-footer__text">Copyright © 2017  Jerry</p>
+        </div>
   <script src="{% static 'birthday/js/jquery.js' %}"></script>
   <script type="text/javascript" src="{% static 'birthday/js/functions.js' %}"></script>
   <script src="{% static 'birthday/js/index.js' %}"></script>
