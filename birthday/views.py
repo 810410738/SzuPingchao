@@ -8,6 +8,10 @@ def index(request):
     if request.method == 'GET':
         return render(request, "birthday/index.html")
 
+def other(request):
+    if request.method == 'GET':
+        return render(request, "birthday/other.html")
+
 
 
 
