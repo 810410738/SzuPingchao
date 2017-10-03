@@ -133,7 +133,10 @@
 			$("#code").typewriter();
 		}
 	</script>
-<embed src="{% static 'birthday/other/day.mp3' %}" autostart="true" loop="true" hidden="true"></embed>
+	<audio src="{% static 'birthday/other/day.mp3' %}" autoplay="true" loop="true" hidden="true">
+<p>你的浏览器不支持audio标签</p>
+</audio>
+<!--<embed src="{% static 'birthday/other/day.mp3' %}" autostart="true" loop="true" hidden="true"></embed>-->
 </body>
 </html>
 
